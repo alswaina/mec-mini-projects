@@ -14,3 +14,6 @@ Thumbs.db
 
 # VSCode
 .vscode/*
+
+# execlude .env
+.env
