@@ -19,7 +19,7 @@ class QuoteToDict(scrapy.Spider):
                 'quote': quote.css('span::text').get(),
                 'author': quote.css('small.author::text').get(),
                 'about': server + quote.css('a').attrib['href'],
-                'tags': quote.css('meta.keywords').attrib['content']
+                'tags': quote.css('meta.keywords').attrib['content'].split(',')
             }
         self.page += 1
 

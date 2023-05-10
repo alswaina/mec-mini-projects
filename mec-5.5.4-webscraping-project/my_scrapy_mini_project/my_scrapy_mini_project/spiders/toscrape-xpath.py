@@ -21,7 +21,7 @@ class QuoteToDict(scrapy.Spider):
                 'quote': quote.xpath("span[1]/text()").get(),
                 'author': quotes.xpath("span[2]/small/text()").get(),
                 'about': server + quotes.xpath("span[2]/a/@href").get(),
-                'tags': quote.xpath("div/meta/@content").get()
+                'tags': quote.xpath("div/meta/@content").get().split(',')
             }
         self.page += 1
         # response.xpath("/html/body/div[1]/div[2]/div[1]/nav/ul/li/a/@href").get()
